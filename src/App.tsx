@@ -10,6 +10,7 @@ import DesarrolloWeb from "./pages/DesarrolloWeb.tsx";
 import Automatizacion from "./pages/Automatizacion.tsx";
 import SoftwareCloud from "./pages/SoftwareCloud.tsx";
 import Marketing from "./pages/Marketing.tsx";
+import ProyectosMoviles from "./pages/ProyectosMoviles.tsx";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/servicios/automatizacion-ia" element={<Automatizacion />} />
           <Route path="/servicios/software-cloud" element={<SoftwareCloud />} />
           <Route path="/servicios/marketing-digital" element={<Marketing />} />
+          <Route path="/proyectos-moviles" element={<ProyectosMoviles />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

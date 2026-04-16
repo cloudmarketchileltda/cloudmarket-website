@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { CheckCircle2, ChevronRight, Code2, Smartphone, Settings, Target, TrendingUp, MonitorPlay } from "lucide-react";
 import Navbar from "@/components/Navbar";
@@ -40,10 +41,7 @@ const DesarrolloWeb = () => {
               </span>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
                 Desarrollo Web y <br className="hidden md:block" />
-                <span 
-                  className="text-transparent bg-clip-text" 
-                  style={{ backgroundImage: 'linear-gradient(135deg, hsl(217 84% 53%) 0%, hsl(217 91% 60%) 100%)' }}
-                >
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-light-blue to-cm-blue">
                   Aplicaciones Móviles
                 </span>
               </h1>
@@ -51,8 +49,12 @@ const DesarrolloWeb = () => {
                 En CloudMarket Chile, diseñamos y desarrollamos soluciones digitales a medida que permiten a tu empresa crecer, optimizar sus procesos y ofrecer una experiencia moderna a tus clientes.
               </p>
               <div className="flex flex-wrap gap-4">
-                <a href="#contacto" className="inline-flex items-center justify-center h-12 px-6 rounded-lg bg-primary text-white font-medium hover:bg-primary/90 transition-colors">
-                  Proyectos
+                <Link to="/proyectos-moviles" className="inline-flex items-center justify-center h-12 px-6 rounded-lg bg-primary text-white font-medium hover:bg-primary/90 transition-colors">
+                  Proyectos Móviles
+                  <ChevronRight className="ml-2 w-5 h-5" />
+                </Link>
+                <a href="#" className="inline-flex items-center justify-center h-12 px-6 rounded-lg bg-primary text-white font-medium hover:bg-primary/90 transition-colors">
+                  Proyectos Web
                   <ChevronRight className="ml-2 w-5 h-5" />
                 </a>
               </div>

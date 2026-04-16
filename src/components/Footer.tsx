@@ -81,10 +81,10 @@ const Footer = () => {
             <h4 className="font-semibold text-primary-foreground mb-4 text-sm">Empresa</h4>
             <ul className="space-y-2">
               {[
-                { label: "Beneficios", href: "#beneficios" },
-                { label: "Proceso", href: "#proceso" },
-                { label: "Testimonios", href: "#testimonios" },
-                { label: "Contacto", href: "#contacto" },
+                { label: "Beneficios", href: "/#beneficios" },
+                { label: "Proceso", href: "/#proceso" },
+                { label: "Testimonios", href: "/#testimonios" },
+                { label: "Contacto", href: "/#contacto" },
               ].map((l) => (
                 <li key={l.label}>
                   <a href={l.href} className="text-light-gray/60 text-sm hover:text-primary transition-colors">{l.label}</a>
