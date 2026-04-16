@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Code2, Bot, Cloud, Megaphone } from "lucide-react";
 
 const services = [
@@ -8,6 +9,7 @@ const services = [
     description: "Aplicaciones modernas, rápidas y escalables que se adaptan a las necesidades de tu negocio.",
     color: "text-primary",
     bgColor: "bg-primary/10",
+    path: "/servicios/desarrollo-web",
   },
   {
     icon: Bot,
@@ -15,6 +17,7 @@ const services = [
     description: "Integra inteligencia artificial para automatizar tareas repetitivas y optimizar tu operación.",
     color: "text-cm-green",
     bgColor: "bg-cm-green/10",
+    path: "/servicios/automatizacion-ia",
   },
   {
     icon: Cloud,
@@ -22,6 +25,7 @@ const services = [
     description: "Soluciones cloud seguras y accesibles desde cualquier lugar, siempre disponibles.",
     color: "text-light-blue",
     bgColor: "bg-light-blue/10",
+    path: "/servicios/software-cloud",
   },
   {
     icon: Megaphone,
@@ -29,6 +33,7 @@ const services = [
     description: "Estrategias de marketing y generación de clientes que impulsan el crecimiento de tu empresa.",
     color: "text-cm-yellow",
     bgColor: "bg-cm-yellow/10",
+    path: "/servicios/marketing-digital",
   },
 ];
 
@@ -55,22 +60,33 @@ const ServicesSection = () => {
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {services.map((service, i) => (
-            <motion.div
-              key={service.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group p-6 rounded-2xl bg-card border border-border hover:border-primary/30 hover:shadow-glow transition-all duration-300 cursor-pointer"
-            >
-              <div className={`w-12 h-12 rounded-xl ${service.bgColor} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                <service.icon className={`w-6 h-6 ${service.color}`} />
-              </div>
-              <h3 className="text-lg font-semibold text-card-foreground mb-2">{service.title}</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">{service.description}</p>
-            </motion.div>
-          ))}
+          {services.map((service, i) => {
+            const CardContent = (
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="group h-full p-6 rounded-2xl bg-card border border-border hover:border-primary/30 hover:shadow-glow transition-all duration-300 cursor-pointer"
+              >
+                <div className={`w-12 h-12 rounded-xl ${service.bgColor} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                  <service.icon className={`w-6 h-6 ${service.color}`} />
+                </div>
+                <h3 className="text-lg font-semibold text-card-foreground mb-2">{service.title}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">{service.description}</p>
+              </motion.div>
+            );
+
+            if (service.path) {
+              return (
+                <Link key={service.title} to={service.path} className="block">
+                  {CardContent}
+                </Link>
+              );
+            }
+
+            return <div key={service.title}>{CardContent}</div>;
+          })}
         </div>
       </div>
     </section>

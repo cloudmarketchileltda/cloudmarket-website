@@ -3,11 +3,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { label: "Servicios", href: "#servicios" },
-  { label: "Beneficios", href: "#beneficios" },
-  { label: "Proceso", href: "#proceso" },
-  { label: "Testimonios", href: "#testimonios" },
-  { label: "Contacto", href: "#contacto" },
+  { label: "Servicios", href: "/#servicios" },
+  { label: "Beneficios", href: "/#beneficios" },
+  { label: "Proceso", href: "/#proceso" },
+  { label: "Testimonios", href: "/#testimonios" },
+  { label: "Contacto", href: "/#contacto" },
 ];
 
 const Navbar = () => {
@@ -37,7 +37,9 @@ const Navbar = () => {
             </a>
           ))}
           <a
-            href="#contacto"
+            href="https://wa.me/56981556804?text=Hola%2C%20me%20interesa%20una%20asesor%C3%ADa"
+            target="_blank"
+            rel="noopener noreferrer"
             className="gradient-primary text-primary-foreground px-5 py-2.5 rounded-lg text-sm font-semibold hover:opacity-90 transition-opacity duration-200"
           >
             Solicitar asesoría
@@ -75,7 +77,9 @@ const Navbar = () => {
                 </a>
               ))}
               <a
-                href="#contacto"
+                href="https://wa.me/56981556804?text=Hola%2C%20me%20interesa%20una%20asesor%C3%ADa"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setIsOpen(false)}
                 className="gradient-primary text-primary-foreground px-5 py-2.5 rounded-lg text-sm font-semibold text-center"
               >

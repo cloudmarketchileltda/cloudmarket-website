@@ -17,9 +17,18 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-primary-foreground mb-4 text-sm">Servicios</h4>
             <ul className="space-y-2">
-              {["Desarrollo web", "Automatización IA", "Software cloud", "Marketing digital"].map((s) => (
-                <li key={s}>
-                  <a href="#servicios" className="text-light-gray/60 text-sm hover:text-primary transition-colors">{s}</a>
+              {[
+                { label: "Desarrollo web", to: "/servicios/desarrollo-web" },
+                { label: "Automatización IA", to: "/servicios/automatizacion-ia" },
+                { label: "Software cloud", to: "/servicios/software-cloud" },
+                { label: "Marketing digital", to: "/servicios/marketing-digital" }
+              ].map((s) => (
+                <li key={s.label}>
+                  {s.to.startsWith("/#") ? (
+                    <a href={s.to} className="text-light-gray/60 text-sm hover:text-primary transition-colors">{s.label}</a>
+                  ) : (
+                    <Link to={s.to} className="text-light-gray/60 text-sm hover:text-primary transition-colors">{s.label}</Link>
+                  )}
                 </li>
               ))}
             </ul>

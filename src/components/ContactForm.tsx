@@ -52,7 +52,7 @@ const ContactForm = () => {
           >
             {[
               { icon: Mail, label: "Email", value: "contacto@cloudmarket.cl" },
-              { icon: Phone, label: "Teléfono", value: "+56 9 1234 5678" },
+              { icon: Phone, label: "Teléfono", value: "+56 9 8155 6804" },
               { icon: MapPin, label: "Ubicación", value: "Santiago, Chile" },
             ].map((item) => (
               <div key={item.label} className="flex items-start gap-4">

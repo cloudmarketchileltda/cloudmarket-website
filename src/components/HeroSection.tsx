@@ -4,9 +4,19 @@ import { ArrowRight } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen gradient-hero overflow-hidden flex items-center pt-20">
-      {/* Dynamic Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+    <section className="relative min-h-screen overflow-hidden flex items-center pt-20">
+      {/* Background Image Layer */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="/images/imagenfondo.jpeg"
+          alt="Tecnología e inteligencia artificial"
+          className="w-full h-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-deep-blue/95 via-deep-blue/80 to-deep-blue/20"></div>
+      </div>
+
+      {/* Dynamic Animated Background Elements Layer */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0 mix-blend-screen opacity-50">
         <motion.div 
           animate={{ 
             x: [0, 50, 0], 
@@ -36,8 +46,8 @@ const HeroSection = () => {
         />
       </div>
 
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="container mx-auto px-4 md:px-6 relative z-10 w-full pt-10">
+        <div className="max-w-3xl">
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
@@ -66,7 +76,9 @@ const HeroSection = () => {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="#contacto"
+                href="https://wa.me/56981556804?text=Hola%2C%20me%20interesa%20una%20asesor%C3%ADa"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="gradient-primary text-primary-foreground px-8 py-4 rounded-xl font-semibold text-lg hover:opacity-90 transition-all duration-300 shadow-glow flex items-center justify-center gap-2 group"
               >
                 Solicitar asesoría
@@ -96,22 +108,6 @@ const HeroSection = () => {
                   <div className="text-sm text-light-gray/60">{stat.label}</div>
                 </motion.div>
               ))}
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="hidden lg:block"
-          >
-            <div className="relative">
-              <div className="absolute inset-0 gradient-primary rounded-2xl blur-3xl opacity-20 animate-pulse-glow" />
-              <img
-                src="/images/imagenfondo.jpeg"
-                alt="Tecnología e inteligencia artificial para empresas"
-                className="relative rounded-2xl shadow-2xl animate-float w-full"
-              />
             </div>
           </motion.div>
         </div>
