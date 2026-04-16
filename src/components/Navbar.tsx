@@ -21,8 +21,8 @@ const Navbar = () => {
       className="fixed top-0 left-0 right-0 z-50 glass-light"
     >
       <div className="container mx-auto px-4 md:px-6 py-4 flex items-center justify-between">
-        <a href="/" className="flex items-center gap-2">
-          <img src="/images/logo final.png" alt="CloudMarket Chile Logo" className="h-10 w-auto" />
+        <a href="https://www.cloudmarket.cl" className="flex items-center gap-2">
+          <img src="/images/logo final.png" alt="CloudMarket Chile Logo" className="h-16 w-auto" />
         </a>
 
         {/* Desktop */}
