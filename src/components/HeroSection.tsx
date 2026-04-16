@@ -1,15 +1,39 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import heroImage from "@/assets/hero-illustration.jpg";
+
 
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen gradient-hero overflow-hidden flex items-center pt-20">
-      {/* Decorative elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 -left-32 w-64 h-64 rounded-full bg-primary/10 blur-3xl" />
-        <div className="absolute bottom-1/4 -right-32 w-96 h-96 rounded-full bg-light-blue/10 blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-primary/5 blur-3xl" />
+      {/* Dynamic Animated Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <motion.div 
+          animate={{ 
+            x: [0, 50, 0], 
+            y: [0, -50, 0],
+            scale: [1, 1.2, 1]
+          }}
+          transition={{ duration: 15, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
+          className="absolute top-[10%] left-[-10%] w-[40rem] h-[40rem] rounded-full bg-primary/30 blur-[120px]" 
+        />
+        <motion.div 
+          animate={{ 
+            x: [0, -60, 0], 
+            y: [0, 60, 0],
+            scale: [1, 1.3, 1]
+          }}
+          transition={{ duration: 18, repeat: Infinity, repeatType: "reverse", ease: "easeInOut", delay: 2 }}
+          className="absolute bottom-[-10%] right-[-10%] w-[45rem] h-[45rem] rounded-full bg-light-blue/20 blur-[140px]" 
+        />
+        <motion.div 
+          animate={{ 
+            x: [0, 40, -40, 0], 
+            y: [0, 40, -40, 0],
+            scale: [1, 1.1, 0.9, 1]
+          }}
+          transition={{ duration: 22, repeat: Infinity, repeatType: "reverse", ease: "easeInOut", delay: 5 }}
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60rem] h-[60rem] rounded-full bg-deep-blue/15 blur-[160px]" 
+        />
       </div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
@@ -84,7 +108,7 @@ const HeroSection = () => {
             <div className="relative">
               <div className="absolute inset-0 gradient-primary rounded-2xl blur-3xl opacity-20 animate-pulse-glow" />
               <img
-                src={heroImage}
+                src="/images/imagenfondo.jpeg"
                 alt="Tecnología e inteligencia artificial para empresas"
                 className="relative rounded-2xl shadow-2xl animate-float w-full"
               />

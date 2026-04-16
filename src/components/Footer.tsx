@@ -7,10 +7,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-10 mb-12">
           <div className="md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg gradient-primary flex items-center justify-center">
-                <span className="font-heading font-bold text-primary-foreground text-sm">CM</span>
-              </div>
-              <span className="font-heading font-bold text-lg text-primary-foreground">CloudMarket</span>
+              <img src="/images/logo final.png" alt="CloudMarket Chile Logo" className="h-10 w-auto" />
             </div>
             <p className="text-light-gray/60 text-sm leading-relaxed">
               Transformación digital para PYMEs. Tecnología, IA y marketing para hacer crecer tu negocio.
