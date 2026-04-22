@@ -33,7 +33,7 @@ export const MobileMockupCarousel = ({ images }: MobileMockupCarouselProps) => {
               <img
                 src={img}
                 alt={`App Screen ${index + 1}`}
-                className="block w-full h-full object-cover"
+                className="block w-full h-full object-fill bg-background"
                 loading="lazy"
               />
             </div>

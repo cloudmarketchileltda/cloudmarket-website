@@ -11,7 +11,15 @@ export const mockAppProjects: AppProject[] = [
     id: "app-1",
     title: "App Control de Asistencia",
     description: "Gestión de turnos y control de acceso del personal de manera remota con validación GPS.",
-    images: ["https://placehold.co/400x800/212529/ffffff?text=Asistencia+1", "https://placehold.co/400x800/1a1d20/ffffff?text=Asistencia+2", "https://placehold.co/400x800/121416/ffffff?text=Asistencia+3"],
+    images: [
+      "/carusel01/Inicio.png",
+      "/carusel01/Asistecia.png",
+      "/carusel01/Panel.png",
+      "/carusel01/Rondas.png",
+      "/carusel01/Mapa.png",
+      "/carusel01/Alertas.png",
+      "/carusel01/Perfl.png"
+    ],
     videoUrl: "https://www.youtube.com/embed/gKZNuMlMvVE"
   },
   {
