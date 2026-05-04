@@ -19,7 +19,7 @@ const ProcessSection = () => {
           className="text-center mb-16"
         >
           <span className="text-sm font-semibold text-primary uppercase tracking-wider">
-            Proceso
+            Proyectos
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-3 mb-4">
             Cómo trabajamos
