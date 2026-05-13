@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const CTASection = () => {
   return (
@@ -21,13 +22,13 @@ const CTASection = () => {
           <p className="text-light-gray/70 text-lg max-w-xl mx-auto mb-10">
             Agenda una asesoría gratuita y descubre cómo la tecnología puede transformar tu empresa.
           </p>
-          <a
-            href="#contacto"
+          <Link
+            to="/contacto"
             className="inline-flex items-center gap-2 gradient-primary text-primary-foreground px-10 py-4 rounded-xl font-semibold text-lg hover:opacity-90 transition-all duration-300 shadow-glow-lg group"
           >
             Comienza ahora
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>
