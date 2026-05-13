@@ -16,6 +16,13 @@ const navLinks = [
     ],
   },
   { label: "Tecnología", to: "/tecnologia" },
+  {
+    label: "Demo",
+    submenu: [
+      { label: "Demo Salon Belleza", href: "https://demo01.cloudmarket.cl/", external: true },
+      { label: "Gestor ISO", href: "https://insight-iso.lovable.app/login", external: true },
+    ],
+  },
   { label: "Contacto", to: "/contacto" },
 ];
 
@@ -60,14 +67,27 @@ const Navbar = () => {
                         className="absolute top-full left-0 mt-2 w-48 rounded-xl bg-white shadow-lg border border-border py-2"
                       >
                         {link.submenu.map((sub) => (
-                          <Link
-                            key={sub.label}
-                            to={sub.to}
-                            className="block px-4 py-2 text-sm text-dark-gray hover:text-primary hover:bg-muted/50 transition-colors"
-                            onClick={() => setIsOpen(false)}
-                          >
-                            {sub.label}
-                          </Link>
+                          sub.to ? (
+                            <Link
+                              key={sub.label}
+                              to={sub.to}
+                              className="block px-4 py-2 text-sm text-dark-gray hover:text-primary hover:bg-muted/50 transition-colors"
+                              onClick={() => setIsOpen(false)}
+                            >
+                              {sub.label}
+                            </Link>
+                          ) : (
+                            <a
+                              key={sub.label}
+                              href={sub.href}
+                              target={sub.external ? "_blank" : undefined}
+                              rel={sub.external ? "noopener noreferrer" : undefined}
+                              className="block px-4 py-2 text-sm text-dark-gray hover:text-primary hover:bg-muted/50 transition-colors"
+                              onClick={() => setIsOpen(false)}
+                            >
+                              {sub.label}
+                            </a>
+                          )
                         ))}
                       </motion.div>
                     )}
@@ -137,14 +157,27 @@ const Navbar = () => {
                       </span>
                       <div className="ml-4 flex flex-col gap-2 mt-1">
                         {link.submenu.map((sub) => (
-                          <Link
-                            key={sub.label}
-                            to={sub.to}
-                            onClick={() => setIsOpen(false)}
-                            className="text-sm text-dark-gray/70 hover:text-primary transition-colors py-1"
-                          >
-                            {sub.label}
-                          </Link>
+                          sub.to ? (
+                            <Link
+                              key={sub.label}
+                              to={sub.to}
+                              onClick={() => setIsOpen(false)}
+                              className="text-sm text-dark-gray/70 hover:text-primary transition-colors py-1"
+                            >
+                              {sub.label}
+                            </Link>
+                          ) : (
+                            <a
+                              key={sub.label}
+                              href={sub.href}
+                              target={sub.external ? "_blank" : undefined}
+                              rel={sub.external ? "noopener noreferrer" : undefined}
+                              onClick={() => setIsOpen(false)}
+                              className="text-sm text-dark-gray/70 hover:text-primary transition-colors py-1"
+                            >
+                              {sub.label}
+                            </a>
+                          )
                         ))}
                       </div>
                     </div>
