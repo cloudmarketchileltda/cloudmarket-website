@@ -20,7 +20,8 @@ const navLinks = [
     label: "Demo",
     submenu: [
       { label: "Demo Salon Belleza", href: "https://demo01.cloudmarket.cl/", external: true },
-      { label: "Gestor ISO", href: "https://insight-iso.lovable.app/login", external: true },
+      { label: "Demo Gestor ISO", href: "https://insight-iso.lovable.app/login", external: true },
+      { label: "Demo Cafe Sereno", href: "https://demo02.cloudmarket.cl/", external: true },
     ],
   },
   { label: "Contacto", to: "/contacto" },

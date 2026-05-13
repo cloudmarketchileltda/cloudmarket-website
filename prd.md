@@ -1,5 +1,18 @@
 # Registro de Cambios — CloudMarket Website
 
+## Actualización de Menú de Demos — 2026-05-13
+
+**Tipo**: Feature | UI
+
+**Descripción**: Se actualizó el menú "Demo" para incluir acceso directo a los aplicativos de demostración de los clientes. Se renombró "Gestor ISO" y se agregó el acceso a "Demo Cafe Sereno".
+
+**Impacto**:
+- Componente `Navbar.tsx`
+
+**Decisiones tomadas**:
+- Se renombró "Gestor ISO" a "Demo Gestor ISO" para mantener consistencia con los demás ítems del menú.
+- Se agregó "Demo Cafe Sereno" con enlace externo a `https://demo02.cloudmarket.cl/` configurado para abrir en una pestaña nueva (`target="_blank"`).
+
 ## Rediseño de Portafolio Web — 2026-05-12
 
 **Tipo**: UI/UX Refactor
