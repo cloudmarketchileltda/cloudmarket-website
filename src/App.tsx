@@ -14,6 +14,7 @@ import ProyectosMoviles from "./pages/ProyectosMoviles.tsx";
 import ProyectosWeb from "./pages/ProyectosWeb.tsx";
 import Tecnologia from "./pages/Tecnologia.tsx";
 import Contacto from "./pages/Contacto.tsx";
+import MobileAppDemo from "./pages/MobileAppDemo.tsx";
 
 const queryClient = new QueryClient();
 
@@ -36,6 +37,7 @@ const App = () => (
           <Route path="/proyectos-moviles" element={<ProyectosMoviles />} />
           <Route path="/tecnologia" element={<Tecnologia />} />
           <Route path="/contacto" element={<Contacto />} />
+          <Route path="/demos/app-movil-salud" element={<MobileAppDemo />} />
           <Route path="/automatizacion" element={<Automatizacion />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

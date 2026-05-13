@@ -1,5 +1,23 @@
 # Registro de Cambios — CloudMarket Website
 
+## Demo App Móvil Salud (3D Hero) — 2026-05-13
+
+**Tipo**: Feature | UI | Experiencia 3D
+
+**Descripción**: Implementación de una sección HERO ultra premium con un smartphone 3D interactivo para demostrar capacidades de desarrollo móvil.
+
+**Impacto**:
+- Nueva página: `src/pages/MobileAppDemo.tsx`
+- Componentes: `src/components/features/MobileDemoHero.tsx`, `src/components/3d/PhoneModel.tsx`
+- Enrutamiento: Actualización en `src/App.tsx`
+- Menú: Actualización en `src/components/Navbar.tsx`
+
+**Decisiones tomadas**:
+- **Three.js + R3F**: Se optó por renderizado 3D en tiempo real para un impacto visual superior frente a videos o imágenes estáticas.
+- **Interacción Directa**: El teléfono sigue el movimiento del mouse y permite interactuar con una interfaz simulada dentro de la pantalla 3D.
+- **Estética Dark Premium**: Uso de materiales PBR, luces dinámicas y glassmorphism para alinearse con los estándares de diseño de Apple y Linear.
+
+
 ## Actualización de Menú de Demos — 2026-05-13
 
 **Tipo**: Feature | UI
