@@ -19,7 +19,6 @@ const Index = () => {
       <ProcessSection />
       <TestimonialsSection />
       <CTASection />
-      <ContactForm />
       <Footer />
       <WhatsAppButton />
     </div>

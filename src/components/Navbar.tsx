@@ -12,10 +12,11 @@ const navLinks = [
     submenu: [
       { label: "Desarrollo Web", to: "/proyectos-web" },
       { label: "Apps Móviles", to: "/proyectos-moviles" },
+      { label: "Automatización", to: "/automatizacion" },
     ],
   },
-  { label: "Tecnologia", href: "/#testimonios" },
-  { label: "Contacto", href: "/#contacto" },
+  { label: "Tecnología", to: "/tecnologia" },
+  { label: "Contacto", to: "/contacto" },
 ];
 
 const Navbar = () => {
@@ -30,9 +31,9 @@ const Navbar = () => {
       className="fixed top-0 left-0 right-0 z-50 glass-light"
     >
       <div className="container mx-auto px-4 md:px-6 py-4 flex items-center justify-between">
-        <a href="https://www.cloudmarket.cl" className="flex items-center gap-2">
+        <Link to="/" className="flex items-center gap-2">
           <img src="/images/logo final.png" alt="CloudMarket Chile Logo" className="h-16 w-auto" />
-        </a>
+        </Link>
 
         {/* Desktop */}
         <div className="hidden md:flex items-center gap-8">
@@ -74,6 +75,19 @@ const Navbar = () => {
                 </div>
               );
             }
+            
+            if ("to" in link && link.to) {
+              return (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  className="text-sm font-medium text-dark-gray hover:text-primary transition-colors duration-200"
+                >
+                  {link.label}
+                </Link>
+              );
+            }
+
             return (
               <a
                 key={link.href}
@@ -136,6 +150,20 @@ const Navbar = () => {
                     </div>
                   );
                 }
+
+                if ("to" in link && link.to) {
+                  return (
+                    <Link
+                      key={link.to}
+                      to={link.to}
+                      onClick={() => setIsOpen(false)}
+                      className="text-sm font-medium text-dark-gray hover:text-primary transition-colors py-2"
+                    >
+                      {link.label}
+                    </Link>
+                  );
+                }
+
                 return (
                   <a
                     key={link.href}
@@ -163,5 +191,6 @@ const Navbar = () => {
     </motion.nav>
   );
 };
+
 
 export default Navbar;

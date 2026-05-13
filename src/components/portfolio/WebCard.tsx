@@ -1,12 +1,25 @@
 import { motion } from "framer-motion";
-import { Play, ExternalLink } from "lucide-react";
+import { Play, ExternalLink, ShoppingCart, LayoutDashboard, GraduationCap, Users, Rocket, Calendar, Store, Boxes } from "lucide-react";
 import { WebProject } from "@/data/mockWebPortfolios";
-import { VideoModal } from "./VideoModal";
 
 interface WebCardProps {
   project: WebProject;
   index: number;
 }
+
+const getIcon = (type: string) => {
+  switch (type.toLowerCase()) {
+    case "e-commerce": return <ShoppingCart className="w-5 h-5" />;
+    case "dashboard": return <LayoutDashboard className="w-5 h-5" />;
+    case "plataforma educativa": return <GraduationCap className="w-5 h-5" />;
+    case "sistema crm": return <Users className="w-5 h-5" />;
+    case "landing page corporativa": return <Rocket className="w-5 h-5" />;
+    case "portal de reservas": return <Calendar className="w-5 h-5" />;
+    case "marketplace b2b": return <Store className="w-5 h-5" />;
+    case "sistema de inventarios": return <Boxes className="w-5 h-5" />;
+    default: return <LayoutDashboard className="w-5 h-5" />;
+  }
+};
 
 export const WebCard = ({ project, index }: WebCardProps) => {
   return (
@@ -15,7 +28,7 @@ export const WebCard = ({ project, index }: WebCardProps) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5, delay: (index % 4) * 0.1 }}
-      className="bg-card border border-border rounded-3xl overflow-hidden shadow-sm hover:shadow-glow-lg transition-all duration-300 group"
+      className="bg-card border border-border rounded-3xl overflow-hidden shadow-sm hover:shadow-glow-lg transition-all duration-300 group h-full flex flex-col"
     >
       {/* Image */}
       <div className="relative overflow-hidden aspect-video">
@@ -30,40 +43,32 @@ export const WebCard = ({ project, index }: WebCardProps) => {
 
       {/* Content */}
       <div className="p-6 flex flex-col flex-1">
-        <h3 className="text-xl font-bold text-foreground mb-3">{project.title}</h3>
-        <p className="text-muted-foreground text-sm flex-1 leading-relaxed mb-4">
+        <div className="flex items-center gap-3 mb-4">
+          <div className="w-10 h-10 rounded-xl bg-primary/5 border border-primary/10 flex items-center justify-center text-primary">
+            {getIcon(project.type)}
+          </div>
+          <span className="text-xs font-bold uppercase tracking-widest text-primary/80">{project.type}</span>
+        </div>
+
+        <p className="text-muted-foreground text-sm flex-1 leading-relaxed mb-6">
+          <span className="text-foreground font-bold block text-lg mb-1 tracking-tight">{project.title}</span>
           {project.description}
         </p>
 
         {/* Tags */}
-        <div className="flex flex-wrap gap-2 mb-5">
+        <div className="flex flex-wrap gap-2 mt-auto">
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="text-xs px-2.5 py-1 rounded-full bg-primary/10 text-primary font-medium"
+              className="text-[10px] px-2 py-0.5 rounded-full bg-muted/50 text-muted-foreground border border-border font-medium"
             >
               {tag}
             </span>
           ))}
         </div>
-
-        {/* Actions */}
-        <div className="flex gap-3">
-          <VideoModal
-            videoUrl={project.videoUrl}
-            trigger={
-              <button className="flex items-center gap-2 px-5 py-2.5 bg-primary text-primary-foreground rounded-xl font-semibold hover:opacity-90 transition-opacity text-sm">
-                <Play className="w-4 h-4 fill-current" />
-                Ver demo
-              </button>
-            }
-          />
-          <button className="flex items-center gap-2 px-5 py-2.5 border border-border text-foreground rounded-xl font-semibold hover:bg-muted transition-colors text-sm">
-            <ExternalLink className="w-4 h-4" />
-            Visitar
-          </button>
-        </div>
       </div>
     </motion.div>
   );
 };
+
+

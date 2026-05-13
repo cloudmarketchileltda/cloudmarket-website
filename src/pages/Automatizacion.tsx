@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
-import { CheckCircle2, ChevronRight, TrendingUp, Bot, Settings, Brain, Link2, Target, Lightbulb } from "lucide-react";
+import { Zap, Bot, Share2, Workflow, Cpu, MessageSquare, BarChart, Settings, ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -11,265 +11,205 @@ const Automatizacion = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  const automationServices = [
+    {
+      title: "Workflows con n8n",
+      icon: <Workflow className="w-8 h-8 text-primary" />,
+      description: "Conectamos todas tus herramientas (CRM, Email, Sheets) mediante flujos lógicos potentes y escalables.",
+      details: ["Integración de APIs", "Webhooks", "Transformación de Datos", "Self-hosted"]
+    },
+    {
+      title: "Agentes de IA",
+      icon: <Bot className="w-8 h-8 text-primary" />,
+      description: "Desarrollamos bots inteligentes que no solo responden, sino que ejecutan acciones basadas en lenguaje natural.",
+      details: ["OpenAI / Anthropic", "LangChain", "RAG (Knowledge Base)", "Autogestión"]
+    },
+    {
+      title: "RRSS & Marketing",
+      icon: <Share2 className="w-8 h-8 text-primary" />,
+      description: "Automatizamos la publicación, respuesta y análisis de tus redes sociales para una presencia 24/7.",
+      details: ["Meta API", "Instagram Automation", "Content Scheduling", "Auto-reply"]
+    }
+  ];
+
+  const benefits = [
+    {
+      title: "Ahorro de Tiempo",
+      text: "Elimina hasta el 90% de las tareas manuales repetitivas de tu equipo.",
+      icon: <Zap className="w-6 h-6" />
+    },
+    {
+      title: "Cero Errores",
+      text: "La automatización no se cansa ni comete errores de digitación.",
+      icon: <Settings className="w-6 h-6" />
+    },
+    {
+      title: "Escalabilidad",
+      text: "Procesa miles de solicitudes simultáneamente sin aumentar costos fijos.",
+      icon: <BarChart className="w-6 h-6" />
+    },
+    {
+      title: "Atención Inmediata",
+      text: "Responde a tus clientes en segundos, incluso fuera de horario laboral.",
+      icon: <MessageSquare className="w-6 h-6" />
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      
+
       {/* Hero Section */}
-      <section className="pt-32 pb-20 md:pt-40 md:pb-32 relative overflow-hidden flex items-center min-h-[85vh]">
-        {/* Background Image Layer */}
+      <section className="pt-32 pb-20 md:pt-40 md:pb-24 relative overflow-hidden flex items-center min-h-[60vh]">
         <div className="absolute inset-0 z-0">
           <img
             src="/images/auto.jpeg"
-            alt="Automatización con Inteligencia Artificial"
+            alt="Automatización inteligente"
             className="w-full h-full object-cover object-center"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-deep-blue/95 via-deep-blue/80 to-deep-blue/20"></div>
         </div>
 
-        <div className="container mx-auto px-4 md:px-6 relative z-10 w-full pt-10">
-          <div className="max-w-3xl">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cm-green/20 text-cm-green text-sm font-medium mb-6">
-                <Bot className="w-4 h-4" />
-                Automatización e IA
-              </span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-                Automatización con <br className="hidden md:block" />
-                <span 
-                  className="text-transparent bg-clip-text" 
-                  style={{ backgroundImage: 'linear-gradient(135deg, hsl(217 84% 53%) 0%, hsl(217 91% 60%) 100%)' }}
-                >
-                  Inteligencia Artificial
-                </span>
-              </h1>
-              <p className="text-lg text-slate-300 mb-8 max-w-xl">
-                En CloudMarket Chile, ayudamos a tu empresa a dar el siguiente paso en su evolución digital. Elimina tareas repetitivas, optimiza procesos y permite que tu negocio funcione de forma más eficiente, rápida y escalable.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <a href="#contacto" className="inline-flex items-center justify-center h-12 px-6 rounded-lg bg-cm-green text-white font-medium hover:bg-cm-green/90 transition-colors">
-                  Proyectos
-                  <ChevronRight className="ml-2 w-5 h-5" />
-                </a>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Intro Section */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4 md:px-6 text-center max-w-4xl">
+        <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
+            className="max-w-4xl mx-auto"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              ¿Qué es la automatización con IA?
-            </h2>
-            <p className="text-xl text-muted-foreground leading-relaxed mb-6">
-              La automatización con inteligencia artificial consiste en utilizar tecnología avanzada para que ciertos procesos de tu empresa se ejecuten de manera automática, sin intervención manual constante.
-            </p>
-            <p className="text-lg text-muted-foreground">
-              Esto permite que tu equipo se enfoque en lo realmente importante: <span className="font-semibold text-foreground">hacer crecer el negocio</span>.
+            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/20 text-white text-sm font-medium mb-8">
+              <Zap className="w-4 h-4" />
+              Eficiencia Operativa
+            </span>
+            
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+              Automatización Inteligente <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-light-blue to-cm-blue">Sin Límites</span>
+            </h1>
+
+            <p className="text-lg md:text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
+              Transformamos procesos manuales en flujos de trabajo autónomos utilizando n8n, IA de última generación y conectividad total.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Breakdowns */}
-      <section className="py-20 bg-muted/30">
+      {/* Intro Section */}
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="bg-card p-8 rounded-2xl border border-border hover:shadow-glow transition-all lg:col-span-2"
-            >
-              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
-                <Settings className="w-7 h-7 text-primary" />
-              </div>
-              <h3 className="text-2xl font-bold mb-4">⚙️ ¿Qué procesos podemos automatizar?</h3>
-              <p className="text-muted-foreground mb-6">
-                En CloudMarket desarrollamos soluciones adaptadas a cada empresa. Algunas de las automatizaciones más comunes incluyen:
-              </p>
-              <ul className="grid sm:grid-cols-2 gap-4">
-                {[
-                  'Atención automática de clientes (chatbots y WhatsApp)',
-                  'Respuestas inteligentes en redes sociales',
-                  'Gestión de leads y seguimiento de clientes',
-                  'Automatización de ventas y embudos comerciales',
-                  'Envío de correos automáticos (email marketing)',
-                  'Integración entre plataformas (CRM, formularios, páginas web, etc.)',
-                  'Procesos internos y administrativos'
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start">
-                    <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mr-3 mt-0.5" />
-                    <span className="text-sm">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
+          <div className="max-w-3xl mx-auto text-center space-y-6">
+            <h2 className="text-2xl md:text-3xl font-bold text-slate-900 uppercase tracking-tight italic">"Si se puede repetir, se puede automatizar"</h2>
+            <p className="text-slate-600 leading-relaxed text-lg font-medium">
+              En la era de la IA, el tiempo es el recurso más valioso. Ayudamos a las empresas a liberar su talento humano de la carga operativa, delegando en sistemas inteligentes la ejecución de procesos críticos en ventas, marketing y operaciones.
+            </p>
+          </div>
+        </div>
+      </section>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-card p-8 rounded-2xl border border-border hover:shadow-glow transition-all"
-            >
-              <div className="w-14 h-14 rounded-xl bg-cm-yellow/10 flex items-center justify-center mb-6">
-                <Brain className="w-7 h-7 text-cm-yellow" />
-              </div>
-              <h3 className="text-2xl font-bold mb-4">🧠 Inteligencia que aprende</h3>
-              <p className="text-muted-foreground mb-6">
-                No se trata solo de automatizar, sino de optimizar continuamente. Implementamos sistemas que:
+      {/* Services Grid */}
+      <section className="py-24 bg-slate-50 border-y border-slate-200">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {automationServices.map((service, idx) => (
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: idx * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-white border border-slate-200 p-8 rounded-3xl hover:border-primary/30 hover:shadow-xl transition-all group shadow-sm"
+              >
+                <div className="mb-6 p-4 bg-primary/10 rounded-2xl w-fit group-hover:scale-110 transition-transform">
+                  {service.icon}
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-4">{service.title}</h3>
+                <p className="text-slate-600 text-sm mb-6 leading-relaxed">{service.description}</p>
+                <div className="flex flex-wrap gap-2">
+                  {service.details.map(detail => (
+                    <span key={detail} className="text-[10px] px-2 py-1 rounded-md bg-slate-50 text-slate-500 border border-slate-200 uppercase tracking-tighter">
+                      {detail}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* n8n Special Section - Dark Blue */}
+      <section className="py-32 relative overflow-hidden bg-[#0f172a]">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 blur-[120px] rounded-full -mr-64 -mt-64 pointer-events-none"></div>
+        <div className="container mx-auto px-4 md:px-6 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <div className="order-2 lg:order-1">
+              <img
+                src="/images/n8n-automation.png"
+                alt="n8n Automation Workflow"
+                className="rounded-[3rem] border border-white/10 shadow-2xl"
+              />
+            </div>
+            <div className="space-y-8 order-1 lg:order-2">
+              <h2 className="text-3xl md:text-5xl font-extrabold text-white leading-tight">
+                Potencia tu negocio con <br />
+                <span className="text-light-blue">n8n Workflow Engine</span>
+              </h2>
+              <p className="text-slate-300 text-lg leading-relaxed">
+                n8n es la herramienta de automatización más flexible del mercado. A diferencia de Zapier, nos permite crear lógicas complejas sin límites de pasos y con un control total sobre tus datos.
               </p>
               <ul className="space-y-4">
-                {[
-                  'Analizan datos',
-                  'Aprenden del comportamiento de los usuarios',
-                  'Mejoran las respuestas y procesos con el tiempo'
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start">
-                    <CheckCircle2 className="w-5 h-5 text-cm-yellow shrink-0 mr-3 mt-0.5" />
-                    <span className="text-sm">{item}</span>
+                {["Conexión con +400 apps", "Lógica condicional avanzada", "Procesamiento de archivos en tiempo real", "Integración nativa con nodos de IA"].map((item, i) => (
+                  <li key={i} className="flex items-center gap-3 text-slate-200">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                    {item}
                   </li>
                 ))}
               </ul>
-            </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="bg-card p-8 rounded-2xl border border-border hover:shadow-glow transition-all"
-            >
-              <div className="w-14 h-14 rounded-xl bg-light-blue/10 flex items-center justify-center mb-6">
-                <Link2 className="w-7 h-7 text-light-blue" />
+      {/* Social Media Automation */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl font-bold text-slate-900 mb-4">Automatización de Redes Sociales</h2>
+              <p className="text-slate-500">Haz que tu marca trabaje por ti mientras descansas.</p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              <div className="p-10 rounded-[2.5rem] bg-slate-50 border border-slate-100 hover:shadow-lg transition-all">
+                <MessageSquare className="w-10 h-10 text-primary mb-6" />
+                <h4 className="text-xl font-bold text-slate-900 mb-4">Respuestas Inteligentes</h4>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  Configuramos agentes de IA que responden comentarios y mensajes directos en Instagram y Facebook, calificando leads y agendando citas automáticamente.
+                </p>
               </div>
-              <h3 className="text-2xl font-bold mb-4">🔗 Integración total</h3>
-              <p className="text-muted-foreground mb-6">
-                Conectamos todas tus plataformas para que trabajen en conjunto de manera sincronizada y automática:
-              </p>
-              <ul className="space-y-3">
-                {['Sitio web', 'WhatsApp', 'Redes sociales', 'CRM', 'Sistemas internos'].map((item, i) => (
-                  <li key={i} className="flex items-start">
-                    <CheckCircle2 className="w-5 h-5 text-light-blue shrink-0 mr-3 mt-0.5" />
-                    <span className="text-sm">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="bg-card p-8 rounded-2xl border border-border hover:shadow-glow transition-all"
-            >
-              <div className="w-14 h-14 rounded-xl bg-success/10 flex items-center justify-center mb-6">
-                <Target className="w-7 h-7 text-success" />
+              <div className="p-10 rounded-[2.5rem] bg-slate-50 border border-slate-100 hover:shadow-lg transition-all">
+                <Share2 className="w-10 h-10 text-primary mb-6" />
+                <h4 className="text-xl font-bold text-slate-900 mb-4">Contenido Autónomo</h4>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  Sistemas que generan borradores de contenido basados en tendencias y los programan en tus canales digitales sin intervención manual.
+                </p>
               </div>
-              <h3 className="text-2xl font-bold mb-4">🎯 Nuestro enfoque</h3>
-              <p className="text-muted-foreground mb-6">
-                Trabajamos contigo para implementar soluciones reales:
-              </p>
-              <ul className="space-y-3">
-                {[
-                  'Analizamos tu operación actual',
-                  'Detectamos oportunidades de automatización',
-                  'Diseñamos la solución ideal',
-                  'Implementamos y optimizamos'
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start">
-                    <CheckCircle2 className="w-5 h-5 text-success shrink-0 mr-3 mt-0.5" />
-                    <span className="text-sm">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-card p-8 rounded-2xl border border-border hover:shadow-glow transition-all"
-            >
-              <div className="w-14 h-14 rounded-xl bg-orange-500/10 flex items-center justify-center mb-6">
-                <Lightbulb className="w-7 h-7 text-orange-500" />
-              </div>
-              <h3 className="text-2xl font-bold mb-4">💡 Casos de uso reales</h3>
-              <ul className="space-y-4">
-                {[
-                  'Empresas que responden a clientes en segundos.',
-                  'Negocios que generan ventas incluso fuera de horario.',
-                  'Procesos internos de horas que ahora toman minutos.'
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start">
-                    <CheckCircle2 className="w-5 h-5 text-orange-500 shrink-0 mr-3 mt-0.5" />
-                    <span className="text-sm">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Benefits Section */}
-      <section className="py-24 bg-background relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-cm-green/5 rounded-full blur-[100px] -z-10"></div>
-        <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-light-blue/5 rounded-full blur-[100px] -z-10"></div>
-        
-        <div className="container mx-auto px-4 md:px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="mb-16"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              📈 Beneficios para tu negocio
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              La automatización no es el futuro, es el presente que aumenta tu competitividad.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {[
-              'Reducción de tareas manuales',
-              'Ahorro de tiempo y costos',
-              'Atención al cliente 24/7',
-              'Mayor velocidad en procesos',
-              'Incremento en conversiones y ventas',
-              'Mejor experiencia para tus clientes'
-            ].map((benefit, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="bg-card p-6 rounded-2xl border border-border shadow-sm flex flex-col items-center justify-center text-center"
-              >
-                <TrendingUp className="w-8 h-8 text-cm-green mb-3" />
-                <span className="font-medium text-sm md:text-base leading-tight">{benefit}</span>
-              </motion.div>
+      <section className="py-24 bg-slate-50">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {benefits.map((benefit, idx) => (
+              <div key={idx} className="text-center space-y-4">
+                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto text-primary">
+                  {benefit.icon}
+                </div>
+                <h5 className="text-slate-900 font-bold text-lg">{benefit.title}</h5>
+                <p className="text-slate-500 text-sm leading-relaxed">{benefit.text}</p>
+              </div>
             ))}
           </div>
         </div>

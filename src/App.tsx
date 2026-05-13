@@ -12,6 +12,8 @@ import SoftwareCloud from "./pages/SoftwareCloud.tsx";
 import Marketing from "./pages/Marketing.tsx";
 import ProyectosMoviles from "./pages/ProyectosMoviles.tsx";
 import ProyectosWeb from "./pages/ProyectosWeb.tsx";
+import Tecnologia from "./pages/Tecnologia.tsx";
+import Contacto from "./pages/Contacto.tsx";
 
 const queryClient = new QueryClient();
 
@@ -32,9 +34,13 @@ const App = () => (
           <Route path="/servicios/marketing-digital" element={<Marketing />} />
           <Route path="/proyectos-web" element={<ProyectosWeb />} />
           <Route path="/proyectos-moviles" element={<ProyectosMoviles />} />
+          <Route path="/tecnologia" element={<Tecnologia />} />
+          <Route path="/contacto" element={<Contacto />} />
+          <Route path="/automatizacion" element={<Automatizacion />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
+
     </TooltipProvider>
   </QueryClientProvider>
 );

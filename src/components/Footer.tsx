@@ -42,16 +42,16 @@ const Footer = () => {
               Transformación digital para PYMEs. Tecnología, IA y marketing para hacer crecer tu negocio.
             </p>
             <div className="flex items-center gap-4">
-              <a href="#" className="p-2 rounded-full bg-white/5 hover:bg-primary/20 text-light-gray hover:text-primary transition-colors" aria-label="Instagram">
+              <a href="https://www.instagram.com/cloudmarket2026/" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-white/5 hover:bg-primary/20 text-light-gray hover:text-primary transition-colors" aria-label="Instagram">
                 <InstagramIcon className="w-5 h-5" />
               </a>
-              <a href="#" className="p-2 rounded-full bg-white/5 hover:bg-primary/20 text-light-gray hover:text-primary transition-colors" aria-label="Facebook">
+              <a href="https://www.facebook.com/cloudmarketltda" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-white/5 hover:bg-primary/20 text-light-gray hover:text-primary transition-colors" aria-label="Facebook">
                 <FacebookIcon className="w-5 h-5" />
               </a>
               <a href="#" className="p-2 rounded-full bg-white/5 hover:bg-primary/20 text-light-gray hover:text-primary transition-colors" aria-label="TikTok">
                 <TikTokIcon className="w-5 h-5" />
               </a>
-              <a href="#" className="p-2 rounded-full bg-white/5 hover:bg-primary/20 text-light-gray hover:text-primary transition-colors" aria-label="YouTube">
+              <a href="https://www.youtube.com/@CloudMarketChile" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-white/5 hover:bg-primary/20 text-light-gray hover:text-primary transition-colors" aria-label="YouTube">
                 <YoutubeIcon className="w-5 h-5" />
               </a>
             </div>

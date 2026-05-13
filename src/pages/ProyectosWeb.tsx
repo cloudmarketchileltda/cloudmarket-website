@@ -37,19 +37,20 @@ const ProyectosWeb = () => {
             transition={{ duration: 0.6 }}
             className="max-w-4xl mx-auto"
           >
-            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/20 text-primary-foreground text-sm font-medium mb-6">
+            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/20 text-primary-foreground text-sm font-medium mb-8">
               <Monitor className="w-4 h-4" />
               Portafolio de Desarrollo
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-              Nuestros Proyectos de <br className="hidden md:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-light-blue to-cm-blue">
-                Desarrollo Web
-              </span>
+            
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+              Proyectos de <span className="text-transparent bg-clip-text bg-gradient-to-r from-light-blue to-cm-blue">Desarrollo Web</span>
             </h1>
+
             <p className="text-lg md:text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
-              Soluciones web desarrolladas para distintos clientes. Descubre cómo transformamos ideas en plataformas funcionales, modernas y preparadas para escalar.
+              Soluciones digitales de alto impacto desarrolladas para distintos clientes. Descubre cómo transformamos ideas en plataformas funcionales, modernas y preparadas para escalar.
             </p>
+
+
           </motion.div>
         </div>
       </section>

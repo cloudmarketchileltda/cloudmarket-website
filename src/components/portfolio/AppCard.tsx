@@ -16,30 +16,20 @@ export const AppCard = ({ project, index }: AppCardProps) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5, delay: (index % 4) * 0.1 }}
-      className="bg-card border border-border rounded-3xl p-6 flex flex-col items-center shadow-sm hover:shadow-glow-lg transition-all duration-300 group"
+      className="flex flex-col items-center group"
     >
-      <div className="w-full mb-6 flex justify-center group-hover:scale-[1.02] transition-transform duration-500">
+      <div className="w-full mb-8 flex justify-center group-hover:scale-[1.05] transition-transform duration-500 drop-shadow-2xl">
         <MobileMockupCarousel images={project.images} />
       </div>
 
-      <div className="flex flex-col flex-1 w-full mt-2 text-center">
-        <h3 className="text-xl font-bold text-foreground mb-3">{project.title}</h3>
-        <p className="text-muted-foreground text-sm flex-1 leading-relaxed max-w-sm mx-auto">
+      <div className="flex flex-col w-full text-center px-4">
+        <h3 className="text-xl font-bold text-white mb-2 tracking-tight group-hover:text-primary transition-colors">{project.title}</h3>
+        <p className="text-slate-400 text-sm leading-relaxed max-w-[240px] mx-auto">
           {project.description}
         </p>
-
-        <div className="mt-6 w-full flex justify-center">
-          <VideoModal
-            videoUrl={project.videoUrl}
-            trigger={
-              <button className="flex items-center gap-2 px-6 py-2.5 bg-primary text-primary-foreground rounded-xl font-semibold hover:opacity-90 transition-opacity w-full sm:w-auto justify-center">
-                <Play className="w-4 h-4 fill-current" />
-                Ver video
-              </button>
-            }
-          />
-        </div>
       </div>
     </motion.div>
   );
 };
+
+

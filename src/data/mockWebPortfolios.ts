@@ -1,6 +1,7 @@
 export interface WebProject {
   id: string;
   title: string;
+  type: string;
   description: string;
   image: string;
   tags: string[];
@@ -10,65 +11,73 @@ export interface WebProject {
 export const mockWebProjects: WebProject[] = [
   {
     id: "web-1",
-    title: "E-commerce TiendaFácil",
+    title: "TiendaFácil",
+    type: "E-commerce",
     description: "Plataforma de comercio electrónico completa con carrito de compras, pasarela de pago y panel de administración.",
-    image: "https://placehold.co/800x600/0d6efd/ffffff?text=E-commerce",
+    image: "/images/projects/web-aura.png",
     tags: ["React", "Node.js", "Stripe", "Tailwind"],
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
   },
   {
     id: "web-2",
-    title: "Dashboard Logístico",
+    title: "Logístico Pro",
+    type: "Dashboard",
     description: "Panel de control en tiempo real para seguimiento de flota, rutas y entregas con mapas interactivos.",
-    image: "https://placehold.co/800x600/198754/ffffff?text=Dashboard",
+    image: "/images/projects/web-logistic.png",
     tags: ["Next.js", "Mapbox", "WebSocket", "PostgreSQL"],
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
   },
   {
     id: "web-3",
-    title: "Plataforma Educativa",
+    title: "Academia Digital",
+    type: "Plataforma Educativa",
     description: "Sistema de gestión de aprendizaje con cursos, evaluaciones, foros y certificaciones digitales.",
-    image: "https://placehold.co/800x600/6610f2/ffffff?text=Educativa",
+    image: "/images/projects/web-edu.png",
     tags: ["Vue.js", "Django", "Docker", "Redis"],
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
   },
   {
     id: "web-4",
-    title: "Sistema CRM",
+    title: "ClientFlow",
+    type: "Sistema CRM",
     description: "Gestor de relaciones con clientes con pipeline de ventas, automatización de correos y reportes.",
-    image: "https://placehold.co/800x600/dc3545/ffffff?text=CRM",
+    image: "/images/projects/web-crm.png",
     tags: ["Angular", "Firebase", "TypeScript", "Chart.js"],
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
   },
   {
     id: "web-5",
-    title: "Landing Page Corporativa",
+    title: "CorpSite",
+    type: "Landing Page Corporativa",
     description: "Sitio web corporativo moderno con animaciones, formulario de contacto y blog integrado.",
-    image: "https://placehold.co/800x600/ffc107/000000?text=Corporativa",
+    image: "/images/projects/web-landing.png",
     tags: ["Astro", "Tailwind", "MDX", "Vercel"],
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
   },
   {
     id: "web-6",
-    title: "Portal de Reservas",
+    title: "BookingHub",
+    type: "Portal de Reservas",
     description: "Sistema de reservas online con calendario interactivo, notificaciones y gestión de disponibilidad.",
-    image: "https://placehold.co/800x600/20c997/ffffff?text=Reservas",
+    image: "/images/movil.jpeg",
     tags: ["React", "Express", "MongoDB", "Socket.io"],
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
   },
   {
     id: "web-7",
-    title: "Marketplace B2B",
+    title: "B2B Connect",
+    type: "Marketplace B2B",
     description: "Plataforma mayorista para transacciones entre empresas con catálogo dinámico y cotizaciones.",
-    image: "https://placehold.co/800x600/fd7e14/ffffff?text=Marketplace",
+    image: "/images/auto.jpeg",
     tags: ["Next.js", "GraphQL", "AWS", "Stripe"],
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
   },
   {
     id: "web-8",
-    title: "Sistema de Inventarios",
+    title: "StockMaster",
+    type: "Sistema de Inventarios",
     description: "Gestión de inventarios con códigos de barras, alertas de stock y reportes en tiempo real.",
-    image: "https://placehold.co/800x600/6f42c1/ffffff?text=Inventarios",
+    image: "/images/imagenfondo.jpeg",
     tags: ["React", "Node.js", "SQL Server", "PWA"],
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
   },

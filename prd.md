@@ -1,0 +1,36 @@
+# Registro de Cambios — CloudMarket Website
+
+## Rediseño de Portafolio Web — 2026-05-12
+
+**Tipo**: UI/UX Refactor
+
+**Descripción**: Se ha rediseñado la presentación de los proyectos en la sección "Proyectos Web" para una estética más visual y moderna, eliminando ruidos visuales (botones) y priorizando la categorización por iconos.
+
+**Impacto**: 
+- Página `ProyectosWeb.tsx`
+- Componente `WebCard.tsx`
+- Data `mockWebPortfolios.ts`
+
+**Decisiones tomadas**:
+- Se reemplazó el H1 textual por una ilustración 3D premium para mejorar el "wow factor".
+- Se eliminaron los botones de acción para simplificar la interfaz, asumiendo que el usuario prefiere una navegación más limpia en esta etapa.
+- Se integraron iconos específicos por tipo de aplicativo (E-commerce, Dashboard, etc.) para una identificación rápida de las capacidades de desarrollo.
+- Se movió el título del proyecto dentro del bloque de descripción para un flujo de lectura más natural.
+
+## Estandarización Visual y Nueva Página de Automatización — 2026-05-12
+
+**Tipo**: Feature | UI/UX | Arquitectura
+
+**Descripción**: Se consolidó el lenguaje visual del sitio, se migró el formulario de contacto a una página independiente y se lanzó la nueva sección de automatización de procesos con IA y n8n.
+
+**Impacto**: 
+- Páginas: `Tecnologia.tsx`, `Contacto.tsx`, `Automatizacion.tsx`.
+- Componentes: `Navbar.tsx`, `ContactForm.tsx`, `Footer.tsx`.
+- Enrutamiento: Actualización en `App.tsx`.
+
+**Decisiones tomadas**:
+- **Layout Dark Hero + Light Body**: Se estableció este patrón como el estándar para todas las páginas internas para garantizar consistencia y elegibilidad.
+- **Página de Contacto Dedicada**: Se eliminó el formulario del Index para reducir la carga cognitiva y mejorar el SEO, creando una página premium con tema oscuro.
+- **IA y n8n**: Se creó la página de Automatización para posicionar el servicio de n8n y agentes de IA como un pilar fundamental del negocio.
+- **Redes Sociales**: Se vincularon las cuentas oficiales de Facebook, Instagram y YouTube en el Footer.
+- **Sección IA en Tecnología**: Se cambió el fondo a azul oscuro (`#0f172a`) para resaltar la importancia estratégica de la IA dentro de la propuesta tecnológica.
