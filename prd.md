@@ -1,5 +1,18 @@
 # Registro de Cambios — CloudMarket Website
 
+## Sincronización de Dependencias para Producción — 2026-05-13
+
+**Tipo**: fix | dependencia
+
+**Descripción**: Se sincronizó el archivo `package-lock.json` con `package.json` para resolver errores de compilación en el entorno de producción (Dokploy/Nixpacks).
+
+**Impacto**: 
+- `package-lock.json`: Actualizado con las versiones correctas de las dependencias.
+
+**Decisiones tomadas**:
+- Se ejecutó `npm install` localmente para regenerar el lockfile y asegurar que todas las dependencias listadas en `package.json` estén correctamente registradas y enlazadas, evitando el error `EUSAGE` durante la fase `npm ci` del despliegue.
+
+
 ## Demo App Móvil Salud (3D Hero) — 2026-05-13
 
 **Tipo**: Feature | UI | Experiencia 3D
@@ -65,3 +78,18 @@
 - **IA y n8n**: Se creó la página de Automatización para posicionar el servicio de n8n y agentes de IA como un pilar fundamental del negocio.
 - **Redes Sociales**: Se vincularon las cuentas oficiales de Facebook, Instagram y YouTube en el Footer.
 - **Sección IA en Tecnología**: Se cambió el fondo a azul oscuro (`#0f172a`) para resaltar la importancia estratégica de la IA dentro de la propuesta tecnológica.
+
+## Configuración de Agente y Habilidades (Skills) — 2026-05-13
+
+**Tipo**: Arquitectura | Configuración
+
+**Descripción**: Se ha configurado el agente Antigravity con reglas de desarrollo globales y un conjunto de habilidades (Skills) especializadas para automatizar flujos de trabajo críticos (PRD, Feature Generation, Scaffolding).
+
+**Impacto**:
+- Nuevo archivo: `.cursorrules` (Reglas maestras del proyecto).
+- Directorio: `.agents/skills/` (Contiene las habilidades `prd-manager`, `feature-generator`, `web-app-scaffolder`, `mobile-app-scaffolder` y `skill-creator`).
+
+**Decisiones tomadas**:
+- **Estandarización**: Se adoptaron las 17 reglas globales de Antigravity para asegurar consistencia en código, arquitectura y seguridad.
+- **Habilidades como "Cajas Negras"**: Se modularizaron las instrucciones complejas en archivos `SKILL.md` dentro de `.agents/skills/` para facilitar su descubrimiento y ejecución por parte del agente.
+- **Puerto 8080**: Se reforzó la regla del puerto fijo para evitar conflictos en entornos de despliegue como Dockploy.
