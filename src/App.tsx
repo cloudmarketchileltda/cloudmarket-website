@@ -15,6 +15,7 @@ import ProyectosWeb from "./pages/ProyectosWeb.tsx";
 import Tecnologia from "./pages/Tecnologia.tsx";
 import Contacto from "./pages/Contacto.tsx";
 import MobileAppDemo from "./pages/MobileAppDemo.tsx";
+import Login from "./pages/Login.tsx";
 
 const queryClient = new QueryClient();
 
@@ -39,6 +40,7 @@ const App = () => (
           <Route path="/contacto" element={<Contacto />} />
           <Route path="/demos/app-movil-salud" element={<MobileAppDemo />} />
           <Route path="/automatizacion" element={<Automatizacion />} />
+          <Route path="/auth" element={<Login />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

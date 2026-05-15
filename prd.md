@@ -1,5 +1,70 @@
 # Registro de Cambios — CloudMarket Website
+ 
+## Ajuste Estético de Pantalla de Login — 2026-05-15
+ 
+**Tipo**: UI | refactor
+ 
+**Descripción**: 
+- Se configuró el fondo general de la página con un gradiente azul profundo (`gradient-hero`).
+- Se restauró el fondo oscuro/negro para el cuadro de login (`glass-card` con base negra y desenfoque) para mejorar el contraste y cumplir con la preferencia del usuario.
+- Se eliminaron definitivamente las opciones de login social.
+ 
+**Impacto**: 
+- **Interfaz de Usuario**: Mayor contraste visual entre el contenedor de login y el fondo de la página, manteniendo una estética premium y profesional.
+- **Consistencia**: Alineación con los colores de marca solicitados por el usuario.
+ 
+**Decisiones tomadas**: Se utilizó `bg-black/40` con `backdrop-blur-xl` para el contenedor de login para lograr ese efecto "negro" solicitado sin perder la profundidad del fondo azul.
 
+## Corrección de Error Crítico y Estabilización de Login — 2026-05-15
+ 
+**Tipo**: fix | UI
+ 
+**Descripción**: Se corrigió un error de sintaxis crítico que impedía la carga del sitio (pantalla en blanco) debido a la importación de iconos inexistentes en la versión instalada de `lucide-react`.
+ 
+**Impacto**: 
+- **Estabilización**: El sitio web ahora carga correctamente.
+- **Login**: Se completó la integración visual de la pantalla de inicio de sesión (`/auth`) con iconos compatibles.
+ 
+**Decisiones tomadas**:
+- **Compatibilidad de Iconos**: Ante la ausencia de iconos de marca (GitHub/Google) en `lucide-react v1.8.0`, se optó por utilizar iconos genéricos compatibles (`GitBranch` para GitHub y `Globe` para Google) y SVGs personalizados en el Footer para asegurar que el build y el runtime sean exitosos sin depender de librerías externas adicionales por ahora.
+- **Validación de Puerto**: Se confirmó que el servidor de desarrollo está operando correctamente en el puerto `8080` según las reglas del proyecto.
+
+## Cambio de texto en botón del Navbar — 2026-05-14
+ 
+**Tipo**: feature
+ 
+**Descripción**: Se actualizó el texto del botón principal en el Navbar de "Solicitar asesoría" a "Acceso Privado".
+ 
+**Impacto**: Afecta la interfaz de usuario en la navegación superior tanto en desktop como en móvil.
+ 
+**Decisiones tomadas**: Se reemplazó el texto y se actualizó el enlace a una ruta de autenticación (`https://cloudmarket.cl/auth`) para reflejar el nuevo propósito del botón.
+ 
+## Adición de Demo AgroQuote al menú — 2026-05-14
+ 
+**Tipo**: feature
+ 
+**Descripción**: Se agregó un nuevo ítem al submenú "Demo" llamado "Demo AgroQuote".
+ 
+**Impacto**: Nuevo enlace externo disponible en el Navbar para desktop y móvil.
+ 
+**Decisiones tomadas**: Se configuró el enlace a `https://agrodemo.cloudmarket.cl` para abrir en una pestaña nueva para mantener la sesión del usuario en el sitio principal.
+ ## Nueva Pantalla de Login (Acceso Privado) — 2026-05-14
+ 
+**Tipo**: feature | UI
+ 
+**Descripción**: Se ha creado una pantalla de inicio de sesión profesional y premium para la sección "Acceso Privado".
+ 
+**Impacto**: 
+- Nueva página: `src/pages/Login.tsx`
+- Ruta: `/auth`
+- Actualización de `Navbar.tsx`: El botón ahora redirige internamente a la nueva pantalla de login.
+ 
+**Decisiones tomadas**:
+- **Estética Premium**: Uso de un fondo oscuro profundo (`#050810`) con efectos de blur y glassmorphism para transmitir seguridad y modernidad.
+- **Navegación Interna**: Se migró el botón de un enlace externo a un componente `Link` de React Router para una experiencia de usuario fluida sin recargas de página.
+- **Social Auth Mocks**: Se incluyeron botones de inicio de sesión con Google y GitHub como parte de la propuesta visual profesional.
+ 
+ 
 ## Sincronización de Dependencias para Producción — 2026-05-13
 
 **Tipo**: fix | dependencia

@@ -22,6 +22,7 @@ const navLinks = [
       { label: "Demo Salon Belleza", href: "https://demo01.cloudmarket.cl/", external: true },
       { label: "Demo Gestor ISO", href: "https://insight-iso.lovable.app/login", external: true },
       { label: "Demo Cafe Sereno", href: "https://demo02.cloudmarket.cl/", external: true },
+      { label: "Demo AgroQuote", href: "https://agrodemo.cloudmarket.cl", external: true },
       { label: "Demo APP Movil Salud", to: "/demos/app-movil-salud" },
     ],
   },
@@ -120,14 +121,12 @@ const Navbar = () => {
               </a>
             );
           })}
-          <a
-            href="https://wa.me/56981556804?text=Hola%2C%20me%20interesa%20una%20asesor%C3%ADa"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            to="/auth"
             className="gradient-primary text-primary-foreground px-5 py-2.5 rounded-lg text-sm font-semibold hover:opacity-90 transition-opacity duration-200"
           >
-            Solicitar asesoría
-          </a>
+            Acceso Privado
+          </Link>
         </div>
 
         {/* Mobile toggle */}
@@ -210,15 +209,13 @@ const Navbar = () => {
                   </a>
                 );
               })}
-              <a
-                href="https://wa.me/56981556804?text=Hola%2C%20me%20interesa%20una%20asesor%C3%ADa"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to="/auth"
                 onClick={() => setIsOpen(false)}
                 className="gradient-primary text-primary-foreground px-5 py-2.5 rounded-lg text-sm font-semibold text-center"
               >
-                Solicitar asesoría
-              </a>
+                Acceso Privado
+              </Link>
             </div>
           </motion.div>
         )}
